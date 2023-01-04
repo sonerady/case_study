@@ -1,0 +1,37 @@
+@use "../../styles/index" as *;
+
+.wrapper {
+  margin-top: 40px !important;
+  display: flex;
+  height: $header-height;
+  @include flex(start, space-between);
+  .right_side {
+    @include flex(center, space-between);
+    gap: 10px;
+    button {
+      transition: all 0.3s ease-in-out;
+      height: 40px;
+      font-family: "Helvetica";
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: -0.171429px;
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+    .login_btn {
+      background-color: red;
+      border-radius: $border-radius-btn;
+      width: 91px;
+      border: none;
+      @include flex(center, center);
+      color: $light;
+    }
+    .user_btn {
+      width: 40px;
+      border-radius: 50%;
+      background-color: $primary;
+    }
+  }
+}
