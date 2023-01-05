@@ -124,6 +124,12 @@ const CardWrapper = ({ containerClassName, children }) => {
     getPromotion();
   }, [dispatch]);
 
+  // DIFFRENCE TIME
+  const now = new Date();
+  const futureDate = new Date(2023, 1, 14);
+  const differenceInTime = futureDate.getTime() - now.getTime();
+  const differenceInDays = differenceInTime / (1000 * 60 * 60 * 24);
+
   return (
     <div className={`${styles.container} `}>
       <div
@@ -141,7 +147,12 @@ const CardWrapper = ({ containerClassName, children }) => {
               key={index}
               className={` ${styles.card} ${setCardStatus(indexes, index)}`}
             >
-              <ProductCard img={item.ImageUrl} logo={item.BrandIconUrl} />
+              <ProductCard
+                img={item.ImageUrl}
+                logo={item.BrandIconUrl}
+                title={item.Title}
+                differenceInTime={differenceInDays.toFixed()}
+              />
             </div>
           );
         })}
