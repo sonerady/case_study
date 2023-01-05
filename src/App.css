@@ -3,7 +3,6 @@ body::-webkit-scrollbar {
 }
 body {
   min-height: 100vh;
-  background-color: gray;
 }
 html {
   scrollbar-width: none;

@@ -17,6 +17,10 @@
     .center_btn {
       margin-top: -1.4rem;
       cursor: pointer;
+      flex: 1;
+      justify-content: center;
+      display: flex;
+      align-items: center;
     }
     .btn_disable {
       opacity: 0.5;
@@ -26,6 +30,7 @@
     }
     .right_btn,
     .left_btn {
+      flex: 1;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
       flex-direction: column;

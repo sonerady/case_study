@@ -5,7 +5,6 @@ const home = () => {
   return (
     <div>
       <Carousel />
-      dasdsa
     </div>
   );
 };

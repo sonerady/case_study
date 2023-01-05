@@ -1,10 +1,10 @@
 @use "../../styles/index" as *;
 
 .wrapper {
-  margin-top: 40px !important;
+  margin-top: 25px !important;
   display: flex;
   height: $header-height;
-  @include flex(start, space-between);
+  @include flex(center, space-between);
   .right_side {
     @include flex(center, space-between);
     gap: 10px;

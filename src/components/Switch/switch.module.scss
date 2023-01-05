@@ -1,6 +1,8 @@
 @use "../../styles/index" as *;
 
 .wrapper {
+  position: relative;
+  z-index: 9999;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -22,6 +24,12 @@
       padding: 6px;
       &:hover {
         opacity: 0.8;
+      }
+      img {
+        background-color: red;
+        width: 25px;
+        border-radius: 20%;
+        @include flex(center, center);
       }
       span {
         font-family: "Helvetica";

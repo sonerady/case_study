@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.container span {
+  z-index: 1000;
+  cursor: pointer;
+  margin: 50px;
+}
+
+.cardCarousel {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+.carouselDefault {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  height: 500px;
+  position: relative;
+  top: -40px;
+}
+
+.leftButton {
+  color: cornflowerblue;
+  font-size: 2em;
+  padding: 5px;
+}
+
+.rightButton {
+  color: cornflowerblue;
+  font-size: 2em;
+  padding: 5px;
+}
+
+.card {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  position: relative;
+  transform: scale(1) translateX(40px);
+  display: flex;
+  background-color: red !important;
+  flex-direction: column;
+}
+.card_wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.card.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  z-index: 3;
+}
+
+.card.next {
+  z-index: 2;
+  transform: scale(0.9) translateX(240px);
+  position: absolute;
+  left: 80px;
+}
+
+.card.prev {
+  transform: scale(0.9) translateX(-240px);
+  z-index: 1;
+  position: absolute;
+  right: 80px;
+  background-color: red;
+}
+.card.prev::after {
+  position: absolute !important;
+  top: 94px;
+  left: 52px;
+  z-index: -999;
+  right: 0;
+  bottom: 0;
+  width: 289px;
+  height: 90px;
+  border-radius: 1.5rem;
+  box-shadow: rgb(255, 0, 0) 0px 20px 0 0;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.card.inactive {
+  transform: scale(1) translateX(0px);
+  z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .card.next {
+    opacity: 1;
+    z-index: 2;
+  }
+  .card.prev {
+    z-index: 1;
+    opacity: 1;
+  }
+}
