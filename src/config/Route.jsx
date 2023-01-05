@@ -5,7 +5,7 @@ import Detail from "../pages/Detail";
 const RouteData = () => {
   const routes = useRoutes([
     { path: "/", element: <Home /> },
-    { path: "/:details/:id", element: <Detail /> },
+    { path: "/campaign/:SeoName/:id", element: <Detail /> },
   ]);
   return routes;
 };

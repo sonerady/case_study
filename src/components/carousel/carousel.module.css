@@ -48,6 +48,7 @@
   display: flex;
   background-color: red !important;
   flex-direction: column;
+  cursor: pointer;
 }
 .card_wrapper {
   height: 100%;
@@ -55,8 +56,6 @@
   justify-content: center;
   align-items: center;
 }
-
-
 
 .card img {
   width: 100%;

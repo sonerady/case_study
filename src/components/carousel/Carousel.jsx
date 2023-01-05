@@ -8,6 +8,7 @@ import {
   fetchPromotionsSuccess,
   fetchPromotionsFailure,
 } from "../../actions/promotionsActions";
+import { Link } from "react-router-dom";
 
 const defaultCardItems = [0, 1, 3];
 
@@ -109,13 +110,12 @@ const CardWrapper = ({ containerClassName, children }) => {
           }
         );
         const data = response.data;
-        // Burada verileri çoğaltıyoruz
+        // Burada elimde tek bir markanının datası olduğu için verileri çoğaltıyorum.
         const multipliedData = [];
         for (let i = 0; i < 3; i++) {
           multipliedData.push(...data);
         }
         dispatch(fetchPromotionsSuccess(multipliedData));
-        console.log(multipliedData);
         setPromotions(multipliedData);
       } catch (error) {
         dispatch(fetchPromotionsFailure(error));
@@ -141,9 +141,9 @@ const CardWrapper = ({ containerClassName, children }) => {
         }`}
       >
         {promotions.map((item, index) => {
-          console.log(item);
           return (
-            <div
+            <Link
+              to={`/campaign/${item.SeoName}/${item.Id}`}
               key={index}
               className={` ${styles.card} ${setCardStatus(indexes, index)}`}
             >
@@ -153,7 +153,7 @@ const CardWrapper = ({ containerClassName, children }) => {
                 title={item.Title}
                 differenceInTime={differenceInDays.toFixed()}
               />
-            </div>
+            </Link>
           );
         })}
       </div>

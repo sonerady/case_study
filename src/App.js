@@ -7,12 +7,15 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
+  const pathname = window.location.pathname;
+  const isPathname = pathname?.startsWith("/campaign") ? true : false;
+
   return (
     <Router>
-      <Header />
-      <Switch />
+      {!isPathname && <Header />}
+      {!isPathname && <Switch />}
       <Pages />
-      <Navbar />
+      {!isPathname && <Navbar />}
     </Router>
   );
 }
