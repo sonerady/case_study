@@ -9,6 +9,7 @@ import {
   fetchPromotionsFailure,
 } from "../../actions/promotionsActions";
 import { Link } from "react-router-dom";
+import { URLS } from "../../constants";
 
 const defaultCardItems = [0, 1, 3];
 
@@ -98,17 +99,14 @@ const CardWrapper = ({ containerClassName, children, setIsVisible }) => {
     const getPromotion = async () => {
       dispatch(fetchPromotionsRequest());
       try {
-        const response = await axios.get(
-          "https://api.extrazone.com/promotions/list?Channel=PWA",
-          {
-            headers: {
-              Authorization: "Bearer your-api-key",
-              "Content-Type": "application/json",
-              "X-Country-Id": "TR",
-              "X-Language-Id": "TR",
-            },
-          }
-        );
+        const response = await axios.get(URLS.PROMOTIONS_URL, {
+          headers: {
+            Authorization: "Bearer your-api-key",
+            "Content-Type": "application/json",
+            "X-Country-Id": "TR",
+            "X-Language-Id": "TR",
+          },
+        });
         const data = response.data;
         // Burada elimde tek bir markanının datası olduğu için verileri çoğaltıyorum.
         const multipliedData = [];

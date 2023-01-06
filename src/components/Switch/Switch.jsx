@@ -9,6 +9,7 @@ import {
   fetchTagsSuccess,
   fetchTagsFailure,
 } from "../../actions/tagsActions";
+import { URLS } from "../../constants";
 
 const Switch = () => {
   const dispatch = useDispatch();
@@ -19,17 +20,14 @@ const Switch = () => {
     const fetchTags = async () => {
       dispatch(fetchTagsRequest());
       try {
-        const response = await axios.get(
-          "https://api.extrazone.com/tags/list",
-          {
-            headers: {
-              Authorization: "Bearer your-api-key",
-              "Content-Type": "application/json",
-              "X-Country-Id": "TR",
-              "X-Language-Id": "TR",
-            },
-          }
-        );
+        const response = await axios.get(URLS.TAGS_URL, {
+          headers: {
+            Authorization: "Bearer your-api-key",
+            "Content-Type": "application/json",
+            "X-Country-Id": "TR",
+            "X-Language-Id": "TR",
+          },
+        });
         const data = response.data;
         dispatch(fetchTagsSuccess(data));
         setSwitchData(data);

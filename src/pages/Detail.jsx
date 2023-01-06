@@ -13,6 +13,7 @@ import { Left_Arrow } from "../assets";
 import { useSelector } from "react-redux";
 import Time from "../components/Time/Time";
 import Loading from "../components/loading/Loading";
+import { URLS } from "../constants";
 
 const Detail = ({ setIsVisible }) => {
   const dispatch = useDispatch();
@@ -31,17 +32,14 @@ const Detail = ({ setIsVisible }) => {
     const getDetail = async () => {
       dispatch(fetchDetailRequest());
       try {
-        const response = await axios.get(
-          `https://api.extrazone.com/promotions?Id=${id}`,
-          {
-            headers: {
-              Authorization: "Bearer your-api-key",
-              "Content-Type": "application/json",
-              "X-Country-Id": "TR",
-              "X-Language-Id": "TR",
-            },
-          }
-        );
+        const response = await axios.get(`${URLS.DETAILS_URL}${id}`, {
+          headers: {
+            Authorization: "Bearer your-api-key",
+            "Content-Type": "application/json",
+            "X-Country-Id": "TR",
+            "X-Language-Id": "TR",
+          },
+        });
         const data = response.data;
         setDetails(data);
         dispatch(fetchDetailSuccess(data));
