@@ -1,13 +1,14 @@
 import styles from "./header.module.scss";
 import { Logo, User } from "../../assets/index";
 import { buttonTexts } from "../../constants";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className={`${styles.wrapper} container`}>
-      <div className={styles.left_side}>
+      <Link to="/" className={styles.left_side}>
         <img src={Logo} alt="Main Logo" />
-      </div>
+      </Link>
       <div className={styles.right_side}>
         <button className={styles.login_btn}>
           <span>{buttonTexts.login}</span>

@@ -1,6 +1,9 @@
 @use "../../styles/index" as *;
 
 .wrapper {
+  button {
+    border: none !important;
+  }
   margin-top: 25px !important;
   display: flex;
   height: $header-height;

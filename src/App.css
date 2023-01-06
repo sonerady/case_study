@@ -3,6 +3,14 @@ body::-webkit-scrollbar {
 }
 body {
   min-height: 100vh;
+  zoom: 1;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
 }
 html {
   scrollbar-width: none;
@@ -15,4 +23,14 @@ html {
 }
 .container {
   margin: 0rem 1rem;
+}
+
+.p1 {
+  font-family: "Helvetica";
+  font-weight: 700 !important;
+  font-size: 26px !important;
+  line-height: 30px !important;
+  letter-spacing: -0.2px !important;
+  color: #000000 !important;
+  margin-bottom: 1rem !important;
 }

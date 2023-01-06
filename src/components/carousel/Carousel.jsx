@@ -23,7 +23,7 @@ const setCardStatus = (indexes, cardIndex) => {
   return styles.inactive;
 };
 
-const CardWrapper = ({ containerClassName, children }) => {
+const CardWrapper = ({ containerClassName, children, setIsVisible }) => {
   const cardItems = children || defaultCardItems;
   const [indexes, setIndexes] = useState({
     previousIndex: cardItems.length - 1,
@@ -143,6 +143,7 @@ const CardWrapper = ({ containerClassName, children }) => {
         {promotions.map((item, index) => {
           return (
             <Link
+              onClick={() => setIsVisible(true)}
               to={`/campaign/${item.SeoName}/${item.Id}`}
               key={index}
               className={` ${styles.card} ${setCardStatus(indexes, index)}`}
@@ -156,6 +157,16 @@ const CardWrapper = ({ containerClassName, children }) => {
             </Link>
           );
         })}
+      </div>
+      <div className={styles.carouselPoints}>
+        {promotions.map((item, index) => (
+          <div
+            key={index}
+            className={`${styles.carouselPoint} ${
+              indexes.currentIndex === index ? styles.active : ""
+            }`}
+          ></div>
+        ))}
       </div>
     </div>
   );

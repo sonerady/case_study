@@ -1,5 +1,29 @@
 @use "../../styles/index" as *;
-
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .sub_color {
+    position: relative;
+    z-index: -1;
+    top: 155px;
+    left: 50%;
+    height: 80px;
+    transform: rotate(2.8deg);
+    border-radius: 0.2rem;
+    p {
+      background-color: transparent;
+      position: absolute;
+      left: -193px;
+      height: 100%;
+      width: 288px;
+      border-radius: 1.4rem;
+      box-shadow: red 0px 25px;
+      border: 1px solid white;
+      z-index: -1;
+    }
+  }
+}
 .wrapper {
   position: absolute;
   top: 50%;
@@ -45,6 +69,8 @@
       align-items: center;
       text-align: center;
       color: #f40000;
+      margin-top: -1rem;
+      margin-bottom: 1rem;
     }
     span {
       text-align: center;
@@ -65,7 +91,6 @@
       z-index: 1;
     }
     .time_out {
-      background-color: red;
       position: absolute;
       background: $primary;
       padding: 0.5rem 1rem;

@@ -1,0 +1,79 @@
+@use "../styles/index" as *;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+  .top {
+    position: relative;
+    height: 25%;
+    img.brand_image {
+      width: 100%;
+      border-radius: 0 0 0 100px;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    }
+    img.brand_icon {
+      position: absolute;
+      width: 55px;
+      height: 55px;
+      bottom: 0px;
+      left: 5px;
+    }
+    .time_wrapper {
+      position: absolute;
+      bottom: 21px;
+      right: 8px;
+    }
+    .back_button_wrapper {
+      background-color: $primary;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 40px;
+      left: 8px;
+      cursor: pointer;
+      @include flex(center, center);
+      img.back_button {
+      }
+    }
+  }
+  .bottom {
+    height: 75%;
+    position: relative;
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      color: #1d1e1c;
+      mix-blend-mode: normal;
+      opacity: 0.75;
+      white-space: wrap !important;
+    }
+  }
+  .btn_wrapper {
+    @include flex(center, center);
+    .sub_btn {
+      @include flex(center, center);
+      width: 92%;
+      margin: 0rem 1rem;
+      text-align: center;
+      background: $btn_bg;
+      border-radius: 28px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      display: flex;
+      color: $light;
+      margin-bottom: 1rem;
+      height: 56px;
+      position: fixed;
+      bottom: 0;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background: $btn_bg;
+      }
+    }
+  }
+}

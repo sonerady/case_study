@@ -3,6 +3,7 @@ import { Brand_logo } from "../../assets";
 import styles from "./switch.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import Loading from "../loading/Loading";
 import {
   fetchTagsRequest,
   fetchTagsSuccess,
@@ -40,7 +41,11 @@ const Switch = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   return (

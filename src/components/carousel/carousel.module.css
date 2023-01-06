@@ -1,7 +1,50 @@
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 0.7rem !important;
+  position: relative;
+}
+.carousel_map {
+  position: absolute;
+  bottom: 5px;
+  display: flex;
+  justify-content: center;
+  width: 60px !important;
+  align-items: center;
+}
+.carouselPoints {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 60px;
+}
+
+.carouselPoint {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d8d8d8;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.carouselPoint.active {
+  background-color: #f40000;
+  width: 19px;
+  border-radius: 4px;
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel_map span {
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  display: flex;
 }
 
 .container span {
@@ -46,9 +89,9 @@
   position: relative;
   transform: scale(1) translateX(40px);
   display: flex;
-  background-color: red !important;
   flex-direction: column;
   cursor: pointer;
+  flex-direction: column;
 }
 .card_wrapper {
   height: 100%;
@@ -82,7 +125,6 @@
   z-index: 1;
   position: absolute;
   right: 80px;
-  background-color: red;
 }
 .card.prev::after {
   position: absolute !important;

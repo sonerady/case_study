@@ -1,0 +1,14 @@
+@use "../../styles/index" as *;
+
+.time_out {
+  background-color: red;
+  padding: 0.5rem 1rem;
+  background: $primary;
+  color: $light;
+  border-radius: 26px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: -0.541667px;
+}

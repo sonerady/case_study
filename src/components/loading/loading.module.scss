@@ -1,0 +1,7 @@
+@use "../../styles/index" as *;
+
+.spinner_container {
+  @include flex(center, center);
+  height: 80vh;
+  font-size: 2rem;
+}
