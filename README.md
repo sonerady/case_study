@@ -5,13 +5,8 @@ git clone <proje_linki> => cd <proje_ismi> => npm install => npm start
 
 
 
-## Case'de neler yapıldı ? 
+In this project, I tried to avoid using ready-made libraries as much as possible. I even used Carousel and Carousel Map Point with just plain javascript and css.
 
-Bu case de figma tasarımına bağlı kalabildim diyebilirim. Fakat figmada gözüken bazı resimler, verilen endpointten dönen bazı resimlerden farklı olduğu için  örnek resimler konusunda Figma'ya bağlı kalınmamış olabilir.
+For state management in the case, I used the "Redux" library. I carefully separated each redux dependency into its own folder.
 
-Bu projede mümkün mertebe hazır kütüphane kullanmamaya özen gösterdim. Carousel'i ve Carousel Map Point'ini dahi düz javascript ve css ile kullanmaya özen gösterdim.
-
-Case'de state management olarak "Redux" kütüphanesini kullandım. Özenli şekilde her bir redux bağımlılıklarını klasörlere ayırdım.
-
-Projede her bir component kendi bünyesinde bir style dosyası barındırıyor. Bu da css tarafında kalabalık ve kirliliğin önüne geçiyor. CSS kısmında module tarza bir css ve scss kullandım. 
-
+Each component in the project has its own style file. This prevents clutter and mess in the css. I used modular-style css and scss in the CSS part.
