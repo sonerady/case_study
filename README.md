@@ -1,5 +1,5 @@
 
-## Projeyi çalıştırma
+## Run the project
 
 git clone <proje_linki> => cd <proje_ismi> => npm install => npm start
 
